@@ -71,7 +71,7 @@ const DashboardLayout: React.FC = () => {
           <div className="mt-4 flex items-center">
             <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
             <div className="ml-4">
-              <p className="font-medium">Alex Johnson</p>
+              <p className="font-medium">Tabe Rickson</p>
               <p className="text-blue-100 text-sm">Mentee Account</p>
             </div>
           </div>

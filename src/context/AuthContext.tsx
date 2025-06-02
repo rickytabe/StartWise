@@ -17,8 +17,8 @@ import { toast } from 'react-toastify';
 interface AuthContextProps {
   user: User | null;
   userData: any | null;
-  isLoading: boolean; // Changed to isLoading to match component expectations
-  error: string | null; // Added error state
+  isLoading: boolean;
+  error: string | null;
   logout: () => Promise<void>;
   loginwithEmail: (
     email: string,
@@ -30,6 +30,7 @@ interface AuthContextProps {
     userData: Record<string, any>
   ) => Promise<void>;
   loginWithGoogle: (role: 'mentor' | 'mentee') => Promise<void>;
+  updateUserData: (data: Partial<Record<string, any>>) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextProps>({
@@ -40,7 +41,8 @@ const AuthContext = createContext<AuthContextProps>({
   logout: async () => {},
   registerLearner: async () => {},
   loginWithGoogle: async () => {},
-  loginwithEmail: async (_email: string, _password: string) => undefined
+  loginwithEmail: async (_email: string, _password: string) => undefined,
+  updateUserData: async () => {},
 });
 
 export const useAuth = () => useContext(AuthContext);
@@ -198,7 +200,45 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setIsLoading(false);
     }
   };
-  
+
+  const updateUserData = async (data: Partial<Record<string, any>>) => {
+    if (!user) {
+      throw new Error('No user logged in');
+    }
+
+    try {
+      setIsLoading(true);
+      setError(null);
+
+      // Determine the collection based on user role
+      const collection = userData?.role === 'mentor' ? 'mentors' : 'mentees';
+      const userRef = doc(db, collection, user.uid);
+
+      // Update the document with new data and timestamp
+      await setDoc(userRef, {
+        ...data,
+        updatedAt: serverTimestamp()
+      }, { merge: true });
+
+      // Update local state
+      setUserData((prev: any) => ({
+        ...prev,
+        ...data,
+        updatedAt: new Date()
+      }));
+
+      toast.success('Profile updated successfully');
+    } catch (error: any) {
+      console.error('Error updating user data:', error);
+      const errorMessage = error.message || 'Failed to update profile';
+      setError(errorMessage);
+      toast.error(errorMessage);
+      throw error;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   // Firebase error message mapping
   const getFirebaseErrorMessage = (errorCode: string) => {
     switch (errorCode) {
@@ -236,7 +276,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       logout,
       registerLearner,
       loginWithGoogle,
-      loginwithEmail: loginWithEmail
+      loginwithEmail: loginWithEmail,
+      updateUserData
     }}>
       {children}
     </AuthContext.Provider>

@@ -162,17 +162,33 @@ const LearnerLogin = () => { // Renamed from Login to LearnerLogin to match file
           <form className="space-y-4" onSubmit={handleSubmit}>
             {/* Email Input */}
             <InputField
-              id="email" name="email" type="email" value={formData.email}
-              onChange={handleChange} onBlur={handleBlur} placeholder="Email Address"
-              icon={<FaEnvelope />} error={errors.email} touched={touched.email}
+              id="email" 
+              name="email" 
+              type="email" 
+              value={formData.email}
+              onChange={handleChange} 
+              onBlur={handleBlur} 
+              placeholder="Enter your email address"
+              icon={<FaEnvelope />} 
+              error={errors.email} 
+              touched={touched.email}
             />
 
             {/* Password Input */}
             <InputField
-              id="password" name="password" type="password" value={formData.password}
-              onChange={handleChange} onBlur={handleBlur} placeholder="Password"
-              icon={<FaLock />} error={errors.password} touched={touched.password}
-              showPasswordToggle={true} showPassword={showPassword} setShowPassword={setShowPassword}
+              id="password" 
+              name="password" 
+              type="password" 
+              value={formData.password}
+              onChange={handleChange} 
+              onBlur={handleBlur} 
+              placeholder="Enter your password"
+              icon={<FaLock />} 
+              error={errors.password} 
+              touched={touched.password}
+              showPasswordToggle={true} 
+              showPassword={showPassword} 
+              setShowPassword={setShowPassword}
             />
 
             <div className="flex items-center justify-between">

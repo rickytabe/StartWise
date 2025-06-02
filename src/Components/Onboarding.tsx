@@ -1,5 +1,6 @@
 
 import { FaSearch, FaCalendarCheck, FaUserFriends, FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const OnboardingSteps = () => {
   const steps = [
@@ -63,21 +64,21 @@ const OnboardingSteps = () => {
               <p className="text-gray-600 mb-6 flex-grow">{step.description}</p>
               
               {/* Call-to-Action Button */}
-              <button className="flex items-center justify-between group w-full max-w-[250px] py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-all">
+              <Link to="/explore-mentors" className="flex items-center justify-between group w-full max-w-[250px] py-3 px-6 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium transition-all">
                 <span>{step.buttonText}</span>
                 <FaArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
-              </button>
+              </Link>
             </div>
           ))}
         </div>
 
         {/* Additional CTA */}
         <div className="text-center mt-16">
-          <button className="bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold py-4 px-8 rounded-full text-lg hover:from-blue-700 hover:to-blue-900 transition-all shadow-lg">
+          <Link to='/explore-mentors' className="bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold py-4 px-8 rounded-full text-lg hover:from-blue-700 hover:to-blue-900 transition-all shadow-lg">
             Begin Your Mentorship Journey
-          </button>
+          </Link>
           <p className="text-gray-600 mt-4 text-sm">
-            Join 5,000+ learners who have transformed their careers with our mentorship program
+            Join <span className='text-blue-600'>Hundreds</span> of learners who have transformed their careers with our mentorship program
           </p>
         </div>
       </div>

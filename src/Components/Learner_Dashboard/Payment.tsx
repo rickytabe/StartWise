@@ -248,7 +248,7 @@ const CollectionForm: React.FC<{
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('https://api.pay.mynkwa.com', {
+      const res = await fetch('https://api.pay.mynkwa.com/collect', {
         method: 'POST',
         headers: {
           'X-API-Key': import.meta.env.VITE_APP_NKWA_API_KEY,

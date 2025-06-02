@@ -6,14 +6,13 @@ import { generateResponse } from "../../services/gemini";
 import { MODELS } from "./constant";
 import type { Message, ChatSession } from "./types/types";
 import { WelcomeScreen } from "./WelcomeScreen";
-import { Header } from "./Header";
 import { ChatSidebar } from "./ChatSidebar";
 
 export default function App() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [selectedModel, setSelectedModel] = useState(MODELS.FLASH);
+  const [selectedModel, _setSelectedModel] = useState(MODELS.FLASH);
   const [webSearchEnabled, setWebSearchEnabled] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
   const typingTimeout = useRef<NodeJS.Timeout | null>(null);

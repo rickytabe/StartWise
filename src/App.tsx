@@ -50,7 +50,7 @@ function App() {
                 <Route path="/ai-mentor" element={<ChatInterface />} />
                 <Route path="/pricing" element={<Pricing />} />
                 <Route
-                  path="/explore-mentors/mentor_details"
+                  path="/explore-mentors/mentor_details:id"
                   element={<MentorDetailPage />}
                 />
                 <Route

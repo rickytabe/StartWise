@@ -1,5 +1,6 @@
 
 import { FaPlay, FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ValuePropositionSection = () => {
   const mentors = [
@@ -8,28 +9,28 @@ const ValuePropositionSection = () => {
       name: "Mr John Tembu",
       role: "Senior Product Manager",
       badges: ["Domain Switch", "Placed at MAANG"],
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+      image: "https://i.pinimg.com/736x/41/72/6f/41726fc8d08b304bc6689718fa12f363.jpg"
     },
     {
       id: 2,
       name: "Mbu Williams",
       role: "Lead Data Scientist",
       badges: ["Career Accelerator", "Talk to Me"],
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+      image: "https://i.pinimg.com/736x/d8/6f/96/d86f96a09d7dc681f85401eb95b1abdf.jpg"
     },
     {
       id: 3,
-      name: "Michael Ngong",
+      name: "Michaella Ngeh",
       role: "UX Design Director",
       badges: ["Domain Switch", "Placed at MAANG"],
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+      image: "https://i.pinimg.com/736x/0b/2e/98/0b2e988dcec7af0209aa42d919c6967b.jpg"
     },
     {
       id: 4,
       name: "Priya Patel",
       role: "Software Engineering Lead",
       badges: ["Career Accelerator", "Talk to Me"],
-      image: "https://images.unsplash.com/photo-1611689103472-1def9b4c5c47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80"
+      image: "https://i.pinimg.com/736x/54/e1/79/54e179e04db25cba8035d3bcc5e5f216.jpg"
     }
   ];
 
@@ -100,9 +101,9 @@ const ValuePropositionSection = () => {
                     <h4 className="text-xl font-bold text-white">{mentor.name}</h4>
                     <p className="text-blue-300">{mentor.role}</p>
                   </div>
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center">
+                  <Link to="/explore-mentors" className="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center">
                     <FaArrowRight />
-                  </button>
+                  </Link>
                 </div>
                 
                 <div className="mt-4 flex flex-wrap gap-2">

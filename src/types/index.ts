@@ -13,6 +13,10 @@ export type User = {
 export type Mentee = User & { 
   level?: 'beginner' | 'intermediate' | 'advanced',
   completedMantorship?: number,
+  dob?: Timestamp, // Date of Birth
+  phoneNumber?: string,
+  skills?: string[], // Optional skills for mentees
+  goal?: string, // Optional goal for mentorship
 }
 
 export type Mentor = User & {

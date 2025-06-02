@@ -477,7 +477,7 @@ const RegisterLearner = () => {
             <p className="text-sm text-gray-600">
               Already have an account?{" "}
               <Link
-                to="/login"
+                to="/login/mentee"
                 className="font-medium text-blue-600 hover:text-blue-500 transition-colors"
               >
                 Sign in

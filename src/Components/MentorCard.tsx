@@ -76,7 +76,7 @@ const MentorCard: React.FC<MentorCardProps> = ({
             <div className="text-sm text-gray-600">per session</div>
           </div>
           <Link 
-            to={`/mentor/${mentor.id}`}
+            to={`/explore-mentors/mentor_details/${mentor.id}`}
             className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
           >
             View Profile

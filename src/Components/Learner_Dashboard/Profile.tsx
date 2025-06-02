@@ -28,11 +28,11 @@ const Profile = () => {
     setTimeout(() => {
       const mockLearner: Learner = {
         id: '12345',
-        email: 'emma.wilson@example.com',
-        name: 'Emma Wilson',
-        phoneNumber: '+1 (555) 123-4567',
-        dob: '1998-05-15',
-        sex: 'female',
+        email: 'taberickson2@gmail.com',
+        name: 'Tabe rickson',
+        phoneNumber: '(+237) 671-234-567',
+        dob: '2003-05-15',
+        sex: 'male',
         level: 'intermediate',
         completedMentorships: 7,
         profileImage: 'https://i.pinimg.com/736x/77/2a/0e/772a0e5c8cda1506181fd68b1d5b72a3.jpg',
@@ -79,7 +79,7 @@ const Profile = () => {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center p-8">
+      <div className="flex items-center justify-center p-8 h-full">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading profile...</p>
