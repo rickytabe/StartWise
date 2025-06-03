@@ -1,5 +1,5 @@
 // services/storage.ts
-export const uploadFile = async (file: File, folder: string): Promise<string> => {
+export const uploadFile = async (file: File, _folder: string): Promise<string> => {
     // For Cloudinary implementation:
     const formData = new FormData();
     formData.append('file', file);

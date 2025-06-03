@@ -14,6 +14,7 @@ import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { auth, db } from '../services/firebase';
 import { toast } from 'react-toastify';
 
+
 interface AuthContextProps {
   user: User | null;
   userData: any | null;

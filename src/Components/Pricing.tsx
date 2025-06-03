@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaCheck, FaCrown, FaRocket, FaSeedling, FaStar, FaTimes, FaMobileAlt, FaClock, FaExclamationTriangle } from 'react-icons/fa';
+import { FaCheck, FaCrown, FaRocket, FaSeedling, FaStar, FaTimes, FaMobileAlt, FaClock } from 'react-icons/fa';
 
 // Payment response interface
 interface PaymentResponse {
@@ -392,7 +392,7 @@ const Pricing = () => {
                     <select
                       value={phoneNumber}
                       onChange={(e) => setPhoneNumber(e.target.value)}
-                      className="bg-white border border-gray-300 text-gray-800 rounded-l-lg p-3 border-r border-gray-300 focus:outline-none"
+                      className="bg-white border  text-gray-800 rounded-l-lg p-3 border-r border-gray-300 focus:outline-none"
                     >
                       <option value="237">+237 (CM)</option>
                       <option value="234">+234 (NG)</option>

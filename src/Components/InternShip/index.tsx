@@ -254,7 +254,7 @@ const InternshipPage = () => {
           industries={industries}
           filteredCount={filteredInternships.length}
           totalCount={internships.length}
-          userLevel={user?.role?.createdAt || 'Not specified'}
+          userLevel={user?.email || 'Not specified'}
         />
         
         {filteredInternships.filter(i => i.isFeatured).length > 0 && (
