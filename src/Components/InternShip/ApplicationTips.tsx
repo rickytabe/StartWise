@@ -3,7 +3,7 @@ import React from 'react';
 
 const ApplicationTips: React.FC = () => (
   <div className="mt-16">
-    <h2 className="text-2xl font-bold mb-6">Internship Application Tips</h2>
+    <h2 className="text-2xl font-bold mb-6">Internship Application Tips For You</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       <div className="bg-white rounded-xl shadow-md p-6">
         <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
